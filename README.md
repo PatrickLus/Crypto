@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a secure remote communication system using a symmetric encryption algorithm. It allows encryption and decryption of messages between two remote computers, sends the private key (OTP) and the encrypted message via SMS using Infobip, and saves message details in a SQLite database.
+This project is a secure remote communication system using a symmetric encryption algorithm. It allows encryption and decryption of messages, sends the private key (OTP) and the encrypted message via SMS using Infobip, and saves message details in a SQLite database.
 
 ## Features
 
