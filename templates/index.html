@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Secure Communication</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="header">
+        <h1>Secure Communication</h1>
+        <a href="{{ url_for('messages') }}">View All Messages</a>
+    </div>
+    <div class="page-container">
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul>
+                        {% for message in messages %}
+                            <li>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+
+            <h2>Encrypt Message</h2>
+            <form action="{{ url_for('encrypt') }}" method="post">
+                <label for="sender">Sender:</label>
+                <input type="text" id="sender" name="sender">
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+
+                <label for="receiver">Receiver's Phone Number:</label>
+                <input type="text" id="receiver" name="receiver">
+
+                <button type="submit">Encrypt</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <h2>Decrypt Message</h2>
+            <form action="{{ url_for('decrypt') }}" method="post">
+                <label for="encrypted_message">Encrypted Message:</label>
+                <textarea id="encrypted_message" name="encrypted_message"></textarea>
+
+                <label for="otp">OTP:</label>
+                <input type="text" id="otp" name="otp">
+                
+                <button type="submit">Decrypt</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
