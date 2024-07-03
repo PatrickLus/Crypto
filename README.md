@@ -27,5 +27,4 @@ This project is a secure remote communication system using a symmetric encryptio
 
 ### Step 2: Clone the Repository
 ```bash
-git clone https://github.com/yourusername/secure_communication.git
-cd secure_communication
+git https://github.com/PatrickLus/Crypto.git
